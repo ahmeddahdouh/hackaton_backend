@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "jsgameapi"
+version = "0.1.0"
+description = "Une petite api pour la gestion des utilisateur et des scores d'un jeux fait purement en js"
+authors = ["ahmed <ahmed.dahdouh98@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+black = "^24.10.0"
+sqlalchemy = "^2.0.36"
+sqlmodel = "^0.0.22"
+alembic = "^1.14.0"
+python-dotenv = "^1.0.1"
+psycopg2 = "^2.9.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

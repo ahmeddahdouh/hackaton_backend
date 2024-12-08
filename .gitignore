@@ -1,0 +1,43 @@
+# Environnement virtuel
+.venv/
+.env
+*.env
+
+# Configuration PyCharm
+.idea/
+
+# Dépendances Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Logs et fichiers temporaires
+*.log
+*.sqlite3
+*.db
+*.pid
+*.pyc
+*.pyo
+
+
+# MyPy, Pytest, etc.
+.mypy_cache/
+.pytest_cache/
+
+# Fichiers Poetry ou Pipenv
+poetry.lock
+Pipfile.lock
+
+# JetBrains-specific
+*.iml
+.idea/
+
+# Autres fichiers système ou personnels
+.DS_Store
+Thumbs.db
+
+# Ignorer les fichiers liés à Black
+.black/
+.mypy_cache/
+*.pyc
+__pycache__/
