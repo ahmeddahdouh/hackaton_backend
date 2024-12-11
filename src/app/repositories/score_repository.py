@@ -1,5 +1,4 @@
 from fastapi import HTTPException
-from poetry.console.commands import self
 
 from sqlalchemy.exc import SQLAlchemyError
 
