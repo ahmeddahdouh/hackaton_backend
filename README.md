@@ -22,21 +22,14 @@ Then, activate the virtual environment:
 
 Once activated, your command prompt should show `(.venv)` before the directory name.
 
-## 2. Install Poetry
-Install Poetry using `pip`:
+## 2. Install Project Dependencies
 
 ```bash
-pip install poetry
+pip install -r requirements.txt
 ```
 
-## 3. Install Project Dependencies
-Navigate to your project directory and install the dependencies listed in `pyproject.toml`:
 
-```bash
-poetry install
-```
-
-## 4. Create a `.env` File
+## 3. Create a `.env` File
 Create a `.env` file in the root directory with the following content:
 
 ```
@@ -62,6 +55,12 @@ alembic upgrade head
 ```
 
 This will apply all the database migrations up to the latest revision.
+
+## 6. Run application
+
+```bash
+uvicorn main:app --reload --port=your_port_number
+```
 
 ---
 
