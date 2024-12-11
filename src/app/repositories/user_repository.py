@@ -1,9 +1,4 @@
-from typing import Dict, List
-
-from distlib.compat import raw_input
 from fastapi import HTTPException
-
-from more_itertools.more import padded
 from sqlalchemy.exc import SQLAlchemyError
 
 from src.app.models.user import User
