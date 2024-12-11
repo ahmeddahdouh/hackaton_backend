@@ -1,6 +1,6 @@
 from datetime import timedelta, datetime
 import jwt
-from fastapi import HTTPException,status
+from fastapi import HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
 
@@ -28,9 +28,9 @@ def create_access_token(data: dict):
     return encoded_jwt
 
 
-def verify_access_token(token:str):
+def verify_access_token(token: str):
     try:
-        payload = jwt.decode(token,SECRET_KEY,algorithms=[ALGORITHM])
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         return payload
     except jwt.PyJWTError:
         raise HTTPException(

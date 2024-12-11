@@ -6,24 +6,24 @@ class ScoreService:
         pass
 
     @staticmethod
-    def create_score(db , score ):
-        return ScoreRepository.create_score(db,score)
+    def create_score(db, score):
+        return ScoreRepository.create_score(db, score)
 
     @staticmethod
     def get_scores(db):
         return ScoreRepository.get_scores(db)
 
     @staticmethod
-    def get_score(db,id_score):
-        return ScoreRepository.get_score(db,id_score)
+    def get_score(db, id_score):
+        return ScoreRepository.get_score(db, id_score)
 
     @staticmethod
     def update_score(db, score, id_score):
         return ScoreRepository.update_score(db, score, id_score)
 
     @staticmethod
-    def delete_score( db,id_score):
-        return ScoreRepository.delete_score(db,id_score)
+    def delete_score(db, id_score):
+        return ScoreRepository.delete_score(db, id_score)
 
     @staticmethod
     def get_all_score(db):

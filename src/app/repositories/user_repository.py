@@ -8,7 +8,11 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from src.app.models.user import User
 from src.app.schemas.user_schema import userResponse
-from src.config.sécurité.securité import hash_password, verify_password, create_access_token
+from src.config.sécurité.securité import (
+    hash_password,
+    verify_password,
+    create_access_token,
+)
 
 
 class UserRepository:
@@ -60,20 +64,20 @@ class UserRepository:
     def get_users(self, db) -> list[userResponse]:
         users = db.query(User).all()
         return [
-                userResponse(
-                    user_name=user.user_name,
-                    first_name=user.first_name,
-                    last_name=user.last_name,
-                )
-                for user in users
-            ]
+            userResponse(
+                user_name=user.user_name,
+                first_name=user.first_name,
+                last_name=user.last_name,
+            )
+            for user in users
+        ]
 
     @classmethod
     def get_user_by_id(self, db, id):
         db_user = db.query(User).filter(User.id == id).first()
         if db_user:
             return db_user
-        else :
+        else:
             raise HTTPException(status_code=404, detail="User not found")
 
     @classmethod
@@ -81,19 +85,15 @@ class UserRepository:
         db_user = db.query(User).filter(User.user_name == user_name).first()
         if db_user:
             return db_user
-        else :
+        else:
             raise HTTPException(status_code=404, detail="User not found")
 
     @staticmethod
-    def login(form_data,db):
-        user_data = db.query(User).filter(User.user_name == form_data.username ).first()
+    def login(form_data, db):
+        user_data = db.query(User).filter(User.user_name == form_data.username).first()
         if user_data:
             if verify_password(form_data.password, user_data.password):
                 token = create_access_token(data={"sub": form_data.username})
                 return {"access_token": token, "token_type": "Bearer"}
-        else :
+        else:
             raise HTTPException(status_code=404, detail="User not found")
-
-
-
-
