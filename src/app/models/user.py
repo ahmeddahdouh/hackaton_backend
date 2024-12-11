@@ -5,6 +5,7 @@ from sqlmodel import Field, Relationship, SQLModel
 from typing import List
 
 from src.app.models import score
+from src.app.models.score import Score
 
 
 class User(SQLModel, table=True):
@@ -14,4 +15,4 @@ class User(SQLModel, table=True):
     first_name: str = Field(unique=True, nullable=False, max_length=50)
     last_name: str = Field(unique=True, nullable=False, max_length=50)
     password: str = Field(nullable=False)
-    Scores: List["score"] = Relationship(back_populates="score")
+    Scores: List["Score"] = Relationship(back_populates="user")
