@@ -9,13 +9,13 @@ class UserService:
     def create_user(self, db, user):
         return UserRepository.create_user(db, user)
 
-    @classmethod
-    def update_user(self, db, user):
-        return UserRepository.update_user(db, user)
+    @staticmethod
+    def update_user(db, user, id_user):
+        return UserRepository.update_user(db, user, id_user)
 
-    @classmethod
-    def delete_user(self, db, user_name):
-        return UserRepository.delete_user(db, user_name)
+    @staticmethod
+    def delete_user(db, id):
+        return UserRepository.delete_user(db, id)
 
     @classmethod
     def get_user(self, db, id_user):

@@ -7,6 +7,7 @@ from passlib.context import CryptContext
 
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/login")
 SECRET_KEY = "vNAsc393Q/L5+gZ0OxFeiOAqjPcF1dTZPCYeqS67Ot8="
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

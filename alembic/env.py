@@ -5,7 +5,14 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from alembic import context
 from sqlmodel import SQLModel
-from src.app.models import user, score
+from src.app.models import (
+    user,
+    generated_kwc,
+    team_members,
+    projects,
+    commissions,
+    payment,
+)
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
