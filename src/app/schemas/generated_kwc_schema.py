@@ -8,3 +8,4 @@ class GeneratedKWCBase(BaseModel):
     user_id: int
     generated_due: datetime
     year: int
+
